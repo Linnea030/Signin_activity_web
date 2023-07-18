@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, .xia-ri{
+            width: 100%;
+            height: 100%;
+            /* overflow: hidden; 超出部分隐藏掉 */
+        }
+        .xia-ri {
+            position: relative;
+            background-image: url(./images/index-bg.png);
+            overflow-y: auto; 
+            background-size: 100%;
+            /* 能滚动 */
+        }
+        .xia-ri-banner > img{
+            width: 100%;
+        }
+        .xia-ri-sw {
+            margin: 15px auto;
+            width: 374px;
+            height: 136px;
+        }
+        .xia-ri-sw > img{ /*属性继承*/
+            width: 100%;
+        }
+        .xia-ri-fatie > img{
+            display: block;
+            margin: 15px auto 25px;
+            width: 154px;
+            height: 50px;
+        }
+        .xia-ri-tiaozhan > img{
+            margin: 12px auto;
+            display: block;
+            width: 216px;
+            height: 40px;
+        }
+        .xia-ri-bg1{
+            margin: 12px auto 47px;
+            width: 370px;
+            height: 458px;
+            background-image: url(./images/day_30+_bg.png);
+            background-size: 100%;
+        }
+        .xia-ri-yezi > img{
+            width: 55px;
+            height: 49px;
+            position: absolute;
+            left: 16px;
+            top: 419px;
+        }
+        .xia-ri-biaoyu {
+            padding: 15px 0 0;
+            margin: 0 auto;
+            width: 215px;
+            height: 20px;
+            font-size: 14px;
+            font-family: zihun143;
+            font-weight: normal;
+            color: #063F79;
+            line-height: 20px;
+        }
+        .xia-ri-bg7-parent{
+            margin: 9px 14px 7px;
+            display:flex;
+            justify-content: space-between;
+        }
+        .xia-ri-bg7{
+            width: 167px;
+            height: 65px;
+            background-image: url(./images/day_7_bg.png);
+            background-size: 100%;
+        }
+        .xia-ri-bg30{
+            margin: 7px auto;
+            width: 343px;
+            height: 64px;
+            background-image: url(./images/day_30_bg.png);
+            background-size: 100%;
+        }
+        .xia-ri-zhanshi{
+            /* margin: 27px auto; */
+            padding: 0 21px;
+            /* width: 311px; */
+            height: 182px;
+            overflow-y: scroll; 
+        }
+        .xia-ri-zhanshi1{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .xia-ri-zhanshi1 > div{
+            margin: 10px 8px 0;
+            width: 49px;
+            font-size: 9px;
+            font-family: SourceHanSansSC;
+            font-weight: 400;
+            color: #063F79;
+            text-align: center;
+            /* background-image: url(./images/shop_yidaka.png);
+            background-size: 100% 100%; */
+        }
+        .xia-ri-zhanshi1 > div > img{
+            width: 49px;
+            height: 46px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="xia-ri">
+        <div class="xia-ri-banner"> 
+            <img src="./images/kv1.png">
+        </div>
+        <div class="xia-ri-sw">
+            <img src="./images/remenhuatifenxiang.png">
+        </div>
+        <div class="xia-ri-fatie">
+            <img src="./images/qufatie.png">
+        </div>
+        <div class="xia-ri-tiaozhan">
+            <img src="./images/xiariqiandaotiaozhan.png">
+        </div>
+        <div class="xia-ri-yezi">
+            <img src="./images/yezi.png">
+        </div>
+        <div class="xia-ri-bg1">
+            <div class="xia-ri-biaoyu">
+                <span> 打卡即有奖，视频会员卡等你拿 </span>
+            </div>
+            <div class="xia-ri-bg7-parent">
+                <div class="xia-ri-bg7">
+                    <div>
+    
+                    </div>
+                </div>
+                <div class="xia-ri-bg7">
+
+                </div>
+            </div>
+            <div class="xia-ri-bg30">
+
+            </div>
+            <div class="xia-ri-zhanshi">
+                <div class="xia-ri-zhanshi1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const xiariDom = document.getElementsByClassName("xia-ri-zhanshi1")
+        const MonthDay = 31
+        for(let i = 1; i <= MonthDay; i++) {
+            let xiariDomSub = document.createElement("div")
+            //innerHTML是覆盖操作，可以使用+=直接在xiariDom[0]上添加
+            xiariDomSub.innerHTML = `<img src="./images/shop_yidaka.png">
+                        <div><span> ${i}天 </span></div>`
+            // 另一种方式
+            // let ImgDom = document.createElement("div")
+            // let ImgDivDom = document.createElement("div")
+            // let spanDom = document.createElement("div")
+            xiariDom[0].appendChild(xiariDomSub)
+        }
+    </script>
+
+
+
+
+
+
+
+    <style>
+        .rules-dialog{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width:100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display:none;
+        }
+        .dialog-content{
+            position: absolute;
+            left:50%;
+            top:50%;
+            width: 339px;
+            height: 495px;
+            background: rgba(255,255,255,0.76);
+            border-radius: 25px;
+            transform: translate(-50%, -50%);
+        }
+        .dialog-close{
+            width:25px;
+            height:25px;
+            text-align: center;
+            background-color: #063F79;
+        }
+        .activity-rule{
+            position:absolute;
+            left:0;
+            top:100px;
+            width: 81px;
+            height: 35px;
+            background: #FFFFFF;
+        }
+        .activity-rule-left {
+            border-radius: 0px 17px 17px 0px;
+        }
+        .activity-rule-right {
+            border-radius: 17px 0px 0px 17px;
+        }
+    </style>
+    <div class="activity-rule activity-rule-left">
+        
+    </div>
+    <div class="rules-dialog">
+        <div class="dialog-content">
+            <div class="dialog-close">
+                X
+            </div>
+        </div>
+    </div>
+    <script>
+        const rulesDom = document.querySelector('.activity-rule')
+        const dialogDom = document.querySelector('.rules-dialog')
+        const closeDom = document.querySelector('.dialog-close')
+        const bodyDom = document.querySelector('body')
+        function open() {
+            dialogDom.style.display = 'block'
+        }
+        closeDom.onclick = function() {
+            dialogDom.style.display = 'none'
+        }
+
+        function movePC() {
+        let isMove = false
+        const downXY = {x:0, y:0}
+        const mouseXY = {x:0, y:0}
+        const curXY = {x:0, y:0}
+        const downUpDate = {start:0, end:0}
+        bodyDom.onmousemove = function(e) {
+            if(!isMove) return
+            const {clientX, clientY} = e
+            mouseXY.x = downXY.x - clientX
+            mouseXY.y = downXY.y - clientY
+            let x = curXY.x - mouseXY.x
+            let y = curXY.y - mouseXY.y
+            rulesDom.style.left = x + 'px'
+            rulesDom.style.top = y + 'px'
+        }
+        //滑动图标
+        rulesDom.onmousedown = function(e) {
+            isMove = true
+            downUpDate.start = +new Date()
+            downXY.x = e.clientX
+            downXY.y = e.clientY
+            curXY.x = parseFloat(rulesDom.style.left) || 0
+            curXY.y = parseFloat(rulesDom.style.top) || 100
+            console.log(curXY.x, curXY.y)
+        }
+        const borderR = 'border-radius'
+        rulesDom.onmouseup = function(e) {
+            isMove = false
+            downUpDate.end = +new Date()
+            if(downUpDate.end - downUpDate.start <= 250) {
+                open()
+            }
+            else{
+                if(this.offsetLeft > (document.body.offsetWidth / 2)) {
+                this.style.left =  (document.body.offsetWidth - this.offsetWidth + 'px') || 0
+                // this.style[borderR] = '17px 0px 0px 17px'
+                this.classList.remove("activity-rule-left")
+                this.classList.add("activity-rule-right")
+                }
+                else{
+                    this.style.left = 0
+                    this.classList.remove("activity-rule-right")
+                    this.classList.add("activity-rule-left")
+                    // this.style[borderR] = '0px 17px 17px 0px'
+                }
+            }
+            // console.log(document.body.offsetWidth)
+        }
+        //获取时间 
+        // const date = +new Date()
+    }
+    function moveH5() {
+        let isMove = false
+        const downXY = {x:0, y:0}
+        const mouseXY = {x:0, y:0}
+        const curXY = {x:0, y:0}
+        const downUpDate = {start:0, end:0}
+        bodyDom.ontouchmove = function(e) {
+            if(!isMove) return
+            const {clientX, clientY} = e.touches[0]
+            mouseXY.x = downXY.x - clientX
+            mouseXY.y = downXY.y - clientY
+            let x = curXY.x - mouseXY.x
+            let y = curXY.y - mouseXY.y
+            rulesDom.style.left = x + 'px'
+            rulesDom.style.top = y + 'px'
+        }
+        rulesDom.ontouchstart = function(e) {
+            isMove = true
+            downUpDate.start = +new Date()
+            downXY.x = e.touches[0].clientX
+            downXY.y = e.touches[0].clientY
+            curXY.x = parseFloat(rulesDom.style.left) || 0
+            curXY.y = parseFloat(rulesDom.style.top) || 100
+            console.log(downXY.x, curXY.y)
+        }
+        const borderR = 'border-radius'
+        rulesDom.ontouchend = function(e) {
+            isMove = false
+            downUpDate.end = +new Date()
+            if(downUpDate.end - downUpDate.start <= 250) {
+                open()
+            }
+            else{
+                if(this.offsetLeft > (document.body.offsetWidth / 2)) {
+                this.style.left =  (document.body.offsetWidth - this.offsetWidth + 'px') || 0
+                // this.style[borderR] = '17px 0px 0px 17px'
+                this.classList.remove("activity-rule-left")
+                this.classList.add("activity-rule-right")
+                }
+                else{
+                    this.style.left = 0
+                    this.classList.remove("activity-rule-right")
+                    this.classList.add("activity-rule-left")
+                    // this.style[borderR] = '0px 17px 17px 0px'
+                }
+            }
+            // console.log(document.body.offsetWidth)
+        }
+    }
+    if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            //移动端设备
+            moveH5()
+        } else {
+            //pc端
+            movePC()
+        }
+    </script>
+</body>
+</html>
